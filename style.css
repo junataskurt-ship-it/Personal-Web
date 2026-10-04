@@ -506,11 +506,18 @@
         position: relative;
 
         z-index: 1;
+         
+
     }
 
     .hero-content {
-        max-width: 55%;
-    }
+    max-width: 700px;
+        padding-right: 40px;
+
+
+}
+
+    
 
     .sub-title {
         color: var(--accent-cyan);
@@ -717,11 +724,6 @@
     }
 
 
-    /* =========================================================
-    PROFILE IMAGE TRANSITION
-    ANIME → REAL PROFILE
-    ========================================================= */
-
     .profile-picture {
         position: relative;
         width: 380px;
@@ -758,10 +760,7 @@
     }
 
 
-    /* =========================================================
-    ANIME IMAGE
-    FIRST IMAGE / DEFAULT
-    ========================================================= */
+   
 
     .normal-img {
         opacity: 1;
@@ -777,11 +776,6 @@
         saturate(1.3);
 }
 
-
-/* =========================================================
-   REAL PROFILE
-   HIDDEN FIRST
-========================================================= */
 
 .anime-img {
     opacity: 0;
@@ -829,10 +823,7 @@
 }
 
 
-/* =========================
-   HOVER
-   ANIME → ORIGINAL
-========================= */
+
 
 /* Anime disappears */
 .profile-picture:hover .anime-img {
