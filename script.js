@@ -1,30 +1,47 @@
-const contactForm = document.querySelector(".contact-form");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (contactForm) {
-    contactForm.addEventListener("submit", function(event) {
+    const form = document.querySelector(".contact-form");
+
+    if (!form) {
+        console.log("Contact form not found.");
+        return;
+    }
+
+    form.addEventListener("submit", function (event) {
+
         event.preventDefault();
 
         const popup = document.createElement("div");
-        popup.className = "message-popup";
 
         popup.innerHTML = `
-            <div class="popup-icon">✓</div>
-            <div>
-                <strong>MESSAGE DELIVERED</strong>
-                <p>Your message has been received successfully.</p>
+            <div class="popup-box">
+                <div class="popup-check">✓</div>
+
+                <div class="popup-text">
+                    <h3>MESSAGE DELIVERED</h3>
+                    <p>Your message has been received successfully.</p>
+                </div>
+
+                <button class="popup-close">&times;</button>
             </div>
         `;
 
         document.body.appendChild(popup);
 
-        contactForm.reset();
+        form.reset();
 
-        setTimeout(() => {
-            popup.classList.add("hide");
+        const closeButton = popup.querySelector(".popup-close");
 
-            setTimeout(() => {
-                popup.remove();
-            }, 400);
-        }, 3000);
+        closeButton.addEventListener("click", function () {
+            popup.remove();
+        });
+
+        setTimeout(function () {
+            popup.remove();
+        }, 4000);
+
     });
-}
+
+}); 
+
+
